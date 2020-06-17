@@ -1,0 +1,142 @@
+:root {
+    --bg: #121A1E;
+    --card-bg-normal: #1F262B;
+
+    --toggle-bg: rgba(255, 255, 255, 0.05);
+    --accent1: #FA3F86;
+    --accent1-dark: #883051;
+
+    --border-radius-large: 10px;
+    --border-radius-small: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background: #121A1E;
+    background: var(--bg);
+}
+
+.container {
+    padding: 40px;
+    margin: 20px;
+    background: #1F262B;
+    background: var(--card-bg-normal);
+
+    border-radius: var(--border-radius-large);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+/* GENERAL SWITCH STYLES */
+
+.switch {
+    display: none;
+}
+
+.switch__label {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1em;
+
+    padding-left: 40px;
+
+    position: relative;
+    cursor: pointer;
+
+    color: white;
+}
+
+.switch__text {
+    height: 16px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*  The background for the switch */
+.switch__label::before {
+    content: " ";
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(255, 255, 255, 0.05);
+    background: var(--toggle-bg);
+    width: 32px;
+    height: 16px;
+    border-radius: 50px;
+    
+    transition: background 0.3s ease-in-out;
+}
+
+/* The switch "toggle" */
+.switch__label::after {
+    content: " ";
+    
+    position: absolute;
+    top: 1px;
+    left: 1px;
+
+    background: #883051;
+    background: var(--accent1-dark);
+    width: 14px;
+    height: 14px;
+    border-radius: 50px; 
+
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.switch:checked + .switch__label::before {
+    background: #883051;
+    background: var(--accent1-dark);
+}
+
+.switch__label:hover::after, .switch__label:focus::after {
+    background: #883051;
+    background: var(--accent1-dark);
+    transform: translateX(16px);
+}
+
+.switch:checked + .switch__label::after {
+    background: #FA3F86;
+    background: var(--accent1);
+    transform: translateX(16px);
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* STYLES FOR A NO-LABEL SWITCH */
+
+.switch__label--nolabel {
+    height: 16px;
+    width: 32px;
+    margin-left: 0;
+
+    padding-left: 0;
+}
+
+.switch__label--nolabel:hover::before, .switch__label:focus::before {
+    background: #883051;
+    background: var(--accent1-dark);
+}
+
+.switch__label--nolabel:hover::after, .switch__label:focus::after {
+    background: #FA3F86;
+    background: var(--accent1);
+    transform: translateX(16px);
+}
