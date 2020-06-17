@@ -1,0 +1,111 @@
+:root {
+    --bg: #121A1E;
+    --card-bg-normal: #1F262B;
+
+    --toggle-bg: rgba(255, 255, 255, 0.05);
+    --accent1: #FA3F86;
+    --accent1-dark: #883051;
+
+    --border-radius-large: 10px;
+    --border-radius-small: 5px;
+
+    --switch-width: 64px;
+    --switch-height: 32px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background: #121A1E;
+    background: var(--bg);
+}
+
+.container {
+    padding: 40px;
+    margin: 20px;
+    background: #1F262B;
+    background: var(--card-bg-normal);
+
+    border-radius: var(--border-radius-large);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------------- */
+/* DEFAULT CHECKBOX STYLES */
+.checkbox {
+    display: none;
+}
+
+.checkbox__label {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1em;
+
+    padding-left: 38px;
+
+    position: relative;
+    cursor: pointer;
+
+    color: white;
+}
+
+.checkbox__text {
+    height: 32px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkbox__label::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    box-sizing: border-box;
+    height: 32px;
+    width: 32px;
+
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #883051;
+    border-color: var(--accent1-dark);
+
+    transition: all 0.3s ease-in-out;
+}
+
+.checkbox__label::after {
+    content: " ";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    
+    box-sizing: border-box;
+    height: 18px;
+    width: 18px;
+
+    background-image: none;
+}
+
+.checkbox__label:hover::before, .checkbox:checked + .checkbox__label::before {
+    border-color: #FA3F86;
+    border-color: var(--accent1);
+}
+
+.checkbox:checked + .checkbox__label::after {
+    background-image: url(./checkmark_rounded\ corners.svg);
+}
