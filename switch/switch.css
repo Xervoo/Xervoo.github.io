@@ -8,6 +8,9 @@
 
     --border-radius-large: 10px;
     --border-radius-small: 5px;
+
+    --switch-width: 64px;
+    --switch-height: 32px;
 }
 
 body {
@@ -52,7 +55,7 @@ body {
     font-weight: bold;
     line-height: 1em;
 
-    padding-left: 40px;
+    padding-left: 70px;
 
     position: relative;
     cursor: pointer;
@@ -61,7 +64,7 @@ body {
 }
 
 .switch__text {
-    height: 16px;
+    height: 32px;
 
     display: flex;
     justify-content: flex-start;
@@ -78,8 +81,8 @@ body {
 
     background: rgba(255, 255, 255, 0.05);
     background: var(--toggle-bg);
-    width: 32px;
-    height: 16px;
+    width: 64px;
+    height: 32px;
     border-radius: 50px;
     
     -webkit-transition: background 0.3s ease-in-out;
@@ -96,12 +99,14 @@ body {
 
     background: #883051;
     background: var(--accent1-dark);
-    width: 14px;
-    height: 14px;
-    border-radius: 50px; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+
+    box-shadow: 3px 0 2px rgba(0, 0, 0, 0.15);
 
     -webkit-transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .switch:checked + .switch__label::before {
@@ -121,17 +126,19 @@ body {
 .switch:checked + .switch__label::after {
     background: #FA3F86;
     background: var(--accent1);
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px);
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+
+    box-shadow: -3px 0 2px rgba(0, 0, 0, 0.15);
 }
 
 /* ----------------------------------------------------------------------------------- */
 /* STYLES FOR A NO-LABEL SWITCH */
 
 .switch__label--nolabel {
-    height: 16px;
-    width: 32px;
+    height: 32px;
+    width: 64px;
     padding-left: 0;
 }
 
