@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Input</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <div class="container">
+        <fieldset class="text-container">
+            <input type="text" class="text" id="general" placeholder="general">
+        </fieldset>
+        <fieldset class="text-container text-container--g-kolhydrater">
+            <input type="number" min="0" class="text" id="text" placeholder="kolhydrater">
+        </fieldset>
+        <fieldset class="text-container text-container--enh-insulin">
+            <input type="number" min="0" class="text" id="text" placeholder="insulin">
+        </fieldset>
+        <fieldset class="text-container text-container--g-enhet">
+            <input type="number" min="0" class="text" id="text" placeholder="kolhydrater">
+        </fieldset>
+        <fieldset class="text-container text-container--mmol-l">
+            <input type="number" min="0" class="text" id="text" placeholder="blodsocker">
+        </fieldset>
+        <fieldset class="text-container text-container--mmol-l-enhet">
+            <input type="number" min="0" class="text" id="text" placeholder="blodsocker">
+        </fieldset>
+    </div>
+    <div class="container">
+        <fieldset class="text-container" disabled="disabled">
+            <input type="text" class="text" id="text" placeholder="general">
+        </fieldset>
+    </div>
+</body>
+</html>

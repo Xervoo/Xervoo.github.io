@@ -1,0 +1,194 @@
+:root {
+    --bg: #121A1E;
+    --card-bg-normal: #1F262B;
+    --toggle-bg: rgba(255, 255, 255, 0.05);
+    --text-input-textcolor: rgba(0, 0, 0, 0.8);
+    --text-input-placeholdercolor: rgba(0, 0, 0, 0.5);
+
+    --white: white;
+    --light-gray: #F3F3F3;
+    --gray: #D8D8D8;
+
+    --accent1: #FA3F86;
+    --accent1-dark: #883051;
+    --attention: #C14545;
+
+    --border-radius-large: 10px;
+    --border-radius-small: 5px;
+
+    --switch-width: 64px;
+    --switch-height: 32px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background: #121A1E;
+    background: var(--bg);
+}
+
+.container {
+    padding: 40px;
+    margin: 20px;
+    background: #1F262B;
+    background: var(--card-bg-normal);
+    border-radius: 10px;
+    background-clip: padding-box;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* FOR DEMONSTRATION PURPOSES */
+
+
+.container:nth-of-type(1) {
+    flex-flow: column nowrap;
+}
+
+.container:nth-of-type(1) .text-container {
+    margin-bottom: 20px;
+}
+.container:nth-of-type(1) .text-container:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* FOR DEMONSTRATION PURPOSES */
+
+
+
+/* ------------------------------------------------------------------- */
+/* GENERAL INPUT STYLES */
+
+.text-container {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.text {
+    box-sizing: border-box;
+
+    height: 32px;
+    width: 300px;
+    position: relative;
+
+    padding: 0;
+    padding-left: 16px;
+    padding-right: 101px;
+
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-input-textcolor);
+
+    background-color: #F3F3F3;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: none;
+}
+
+.text::placeholder, .text::-webkit-input-placeholder, .text::-moz-placeholder, .text::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    color: var(--text-input-placeholdercolor);
+}
+
+.text:focus {
+    outline: none;
+}
+
+.text:invalid, .text:-moz-ui-invalid {
+    box-shadow: 0 0 0 2px #C14545;
+    box-shadow: 0 0 0 2px var(--attention);
+}
+
+.text-container::after {
+    content: "general";
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 16px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-input-textcolor);
+
+    background-color: #D8D8D8;
+    background-color: var(--gray);
+    background-clip: padding-box;
+    border-radius: 5px;
+}
+
+.text-container:disabled {
+    opacity: 0.5;
+}
+
+/* ------------------------------------------------------------------- */
+/* GRAM KOLHYDRATER */
+.text-container--g-kolhydrater .text {
+    padding-right: 168px;
+}
+
+.text-container--g-kolhydrater::after {
+    content: "gram kolhydrater";
+}
+
+/* ------------------------------------------------------------------- */
+/* ENH. INSULIN */
+.text-container--enh-insulin .text {
+    padding-right: 129px;
+}
+
+.text-container--enh-insulin::after {
+    content: "enh. insulin";
+}
+
+/* ------------------------------------------------------------------- */
+/* G/ENHET */
+.text-container--g-enhet .text {
+    padding-right: 115px;
+}
+
+.text-container--g-enhet::after {
+    content: "g. / enhet";
+}
+
+/* ------------------------------------------------------------------- */
+/* MMOL/L */
+.text-container--mmol-l .text {
+    padding-right: 104px;
+}
+
+.text-container--mmol-l::after {
+    content: "mmol / l";
+}
+
+/* ------------------------------------------------------------------- */
+/* MMOL/L / ENHET */
+.text-container--mmol-l-enhet .text {
+    padding-right: 148px;
+}
+
+.text-container--mmol-l-enhet::after {
+    content: "mmol/l / enhet";
+}

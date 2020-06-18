@@ -34,7 +34,8 @@ body {
     background: #1F262B;
     background: var(--card-bg-normal);
 
-    border-radius: var(--border-radius-large);
+    border-radius: 10px;
+    background-clip: padding-box;
 
     display: flex;
     flex-flow: row nowrap;
